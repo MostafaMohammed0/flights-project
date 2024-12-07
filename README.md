@@ -2,7 +2,7 @@
 # Flight Search and Map Integration
 
 This project allows users to search for flights between two cities, select travel dates, and visualize flight routes on a Google Map. It integrates flight search data using the SkyScrapper API and uses Google Maps to display driving directions between the origin and destination cities.
-![Image Alt Text](https://github.com/MostafaMohammed0/flights-project/raw/main/preview.jpg)
+![Image Alt Text](https://github.com/MostafaMohammed0/flights-project/raw/main/pewview.png)
 
 ## Features
 - Search for flights between two cities based on user-selected dates.
