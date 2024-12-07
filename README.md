@@ -1,70 +1,94 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Flight Search and Map Integration
 
-## Available Scripts
+This project allows users to search for flights between two cities, select travel dates, and visualize flight routes on a Google Map. It integrates flight search data using the SkyScrapper API and uses Google Maps to display driving directions between the origin and destination cities.
 
-In the project directory, you can run:
+## Features
+- Search for flights between two cities based on user-selected dates.
+- Display flight information such as price, departure, and return dates.
+- Visualize the route between cities on a Google Map with directions.
+- Autocomplete feature for cities using Google Places API.
 
-### `npm start`
+## Tech Stack
+- **React**: Frontend framework for building the user interface.
+- **Material UI**: For responsive and styled components.
+- **Google Maps API**: For displaying the map and directions.
+- **SkyScrapper API**: To fetch flight and airport data.
+- **Axios**: For making API requests.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/flight-search-map.git
+   ```
 
-### `npm test`
+2. Navigate to the project directory:
+   ```bash
+   cd flight-search-map
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+4. Create a `.env` file in the root directory and add your Google Maps API key and SkyScrapper API key:
+   ```bash
+   REACT_APP_GOOGLE_MAPS_API_KEY=your-google-maps-api-key
+   REACT_APP_RAPIDAPI_KEY=your-rapidapi-key
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Run the application:
+   ```bash
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+6. Visit `http://localhost:3000` to view the app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Usage
 
-### `npm run eject`
+The app uses two APIs:
+- **Google Maps API**: Provides the map and direction services.
+- **SkyScrapper API**: Fetches airport and flight data.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Make sure to replace the API keys with your own in the `.env` file to use the app.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Components
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `Search` Component
+The core component of the app that handles:
+- Fetching flight data based on the origin, destination, and dates.
+- Displaying flight details such as price and duration.
+- Rendering the Google Map with flight route directions.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Google Maps
+- Displays the route from the origin city to the destination city using the `DirectionsService` and `DirectionsRenderer` from Google Maps API.
 
-## Learn More
+### Autocomplete Fields
+- Users can type in the city names, and the app will suggest matching cities via the Google Places Autocomplete API.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Example
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Enter an origin city (e.g., "London").
+2. Enter a destination city (e.g., "New York").
+3. Select the travel date and return date.
+4. Click "Search Flights" to view available flights.
+5. View the flight details and see the driving route between the cities on the map.
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Feel free to fork this repository and contribute by:
+- Fixing bugs.
+- Adding features or improving the user interface.
+- Enhancing documentation.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is licensed under the MIT License.
 
-### Making a Progressive Web App
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Material UI](https://mui.com/)
+- [Google Maps API](https://developers.google.com/maps)
+- [SkyScrapper API](https://rapidapi.com/sky-scrapper/api/sky-scrapper)
